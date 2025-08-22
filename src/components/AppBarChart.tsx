@@ -3,23 +3,23 @@ import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartToo
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
 const chartConfig = {
-  desktop: {
-    label: "Desktop",
+  total: {
+    label: "Total",
     color: "var(--chart-1)",
   },
-  mobile: {
-    label: "Mobile",
+  successful: {
+    label: "Successful",
     color: "var(--chart-4)",
   },
 } satisfies ChartConfig;
 
 const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: "January", total: 186, successful: 80 },
+  { month: "February", total: 305, successful: 200 },
+  { month: "March", total: 237, successful: 120 },
+  { month: "April", total: 173, successful: 90 },
+  { month: "May", total: 209, successful: 130 },
+  { month: "June", total: 214, successful: 140 },
 ];
 
 const AppBarChart = () => {
@@ -43,8 +43,8 @@ const AppBarChart = () => {
           />
           <ChartTooltip content={<ChartTooltipContent />} />
           <ChartLegend content={<ChartLegendContent />} />
-          <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-          <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+          <Bar dataKey="total" fill="var(--color-total)" radius={4} />
+          <Bar dataKey="successful" fill="var(--color-successful)" radius={4} />
         </BarChart>
       </ChartContainer>
     </div>
